@@ -1,0 +1,188 @@
+1)
+public static void Main() 
+{
+    string str; 
+    int l= 0;
+	
+      Console.Write("\n\nFind the length of a string :\n");
+      
+      Console.Write("Input the string : ");
+      str = Console.ReadLine();
+
+         foreach(char chr in str)
+        {
+            l += 1;
+
+        }
+Console.Write("Length of the string is : {0}\n\n", l);
+}
+
+2)
+public static void Main() 
+{ 
+string str, str1 = "";
+ int i,l;
+Console.Write("Input  A String : ");
+            str = Console.ReadLine();
+
+            l = str.Length-1;
+            for (i=l;i>=0;i--)
+            {
+
+                str1 = str1 + str[i];
+            }
+
+            Console.WriteLine("The string in Reverse  Order Is : {0}", str1);
+           
+}
+
+3)
+public static void Main() 
+{ 
+string str, str1 = "";
+ int i,l;
+Console.Write("Input  1 String : ");
+            str = Console.ReadLine();
+Console.Write("Input  2 String : ");
+            str1 = Console.ReadLine();
+
+            
+            If (str ==str1) 
+            {
+
+                Console.WriteLine("The string is same: {0}");
+            }
+else
+{
+      Console.WriteLine("The string is not same);
+           
+     }
+}
+
+4)
+class Accounts
+    {
+        int acc_no;
+        string cust_name, acc_type, trans_type;
+        float amount, balance = 10000;
+
+        public Accounts(int ano,string name,string a_type)
+        {
+            acc_no = ano;
+            cust_name = name;
+            acc_type = a_type;
+        }
+        
+        public void UpdateBalance(string chr, float amt)
+        {
+            amount = amt;
+            if(chr == "D" || chr == "d")
+            {
+                balance += amount;
+                Console.WriteLine("\nAmount Deposition Successful..\n");
+            }
+            else if(chr == "W" || chr == "w")
+            {
+                if (amount < balance)
+                {
+                    balance -= amount;
+                    Console.WriteLine("\nAmount Withdrawal Successful..\n");
+                }
+                else
+                {
+                    Console.WriteLine("\nInsufficient Balance!!\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid Request!!!");
+            }
+        }
+
+        public void ShowData()
+        {
+            Console.WriteLine("Account Number: " + acc_no);
+            Console.WriteLine("Customer Name: " + cust_name);
+            Console.WriteLine("Account Type: " + acc_type);
+            Console.WriteLine("Current Balance: " + balance);
+            Console.WriteLine();
+        }
+
+        static void Main()
+        {
+            int acc_no;
+            string cust_name, acc_type, trans_type;
+            float amount;
+            Console.Write("Enter Account Number: "); acc_no = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Name: ");  cust_name = Console.ReadLine();
+            Console.Write("Enter Account Type (Savings/Current): "); acc_type = Console.ReadLine();
+            Console.Write("\nSelect from below options:\n1. Press 'D' for deposit\n2. Press 'W' for withdrawal\nYour Option: "); trans_type = Console.ReadLine();
+            Console.Write("Enter Amount: "); amount = Convert.ToInt32(Console.ReadLine());
+            Accounts Customer = new Accounts(acc_no,cust_name,acc_type);
+            Customer.UpdateBalance(trans_type,amount);
+            Customer.ShowData();
+            Console.Read();
+        }
+    }
+
+5)
+class Student
+    {
+        int rollno,semester;
+        string name,classname,branch;
+        public int[] marks = new int[5];
+        public string result;
+
+        public Student(int rollno,int semester,string name,string classname,string branch)
+        {
+            this.rollno = rollno;
+            this.semester = semester;
+            this.name = name;
+            this.classname = classname;
+            this.branch = branch;
+        }
+
+        public void GetMarks()
+        {
+            Console.WriteLine("Enter Marks of 5 Subjects: ");
+            for (int i = 0; i < 5; i++)
+            {
+                marks[i] = Convert.ToInt32(Console.ReadLine());
+                if (marks[i] < 35)
+                {
+                    result = "FAIL";
+                }
+            }
+        }
+
+        public void DisplayResult()
+        {
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine($"\nName: {name}\nRoll Number: {rollno}\nClass: {classname}\nBranch: {branch}\nSemester: {semester}");
+            if(result == "FAIL")
+            {
+                Console.Write($"Result: {result}");
+            }
+            else
+            {
+                result = marks.Average() < 50 ? "FAIL" : "PASS";
+                Console.Write($"Result: {result}");
+            }
+        }
+
+        static void Main()
+        {
+            int rollno, semester;
+            string name, classname, branch;
+            Console.WriteLine("Enter Student Details:");
+            Console.Write("Roll Number: "); rollno = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Name: "); name = Console.ReadLine();
+            Console.Write("Class: "); classname = Console.ReadLine();
+            Console.Write("Semester: "); semester = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Branch: "); branch = Console.ReadLine();
+            Student s = new Student(rollno, semester, name, classname, branch);
+            s.GetMarks();
+            s.DisplayResult();
+            Console.Read();
+        }
+    }
