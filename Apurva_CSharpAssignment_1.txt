@@ -1,0 +1,140 @@
+1)
+public class TestData
+{
+	public static void Main()
+	{
+ 		int int1,int2; 
+ 		Console.Write("Input 1st number: "); 
+		int1= Convert.ToInt32(Console.ReadLine());
+		Console.Write("Input 2nd number: ");
+ 		int2= Convert.ToInt32(Console.ReadLine());
+ 		if (int1 == int2) 
+		{
+			Console.WriteLine("{0} and {1} are equal.\n",int1,int2); 
+		}
+		else
+		{
+ 			Console.WriteLine("{0} and {1} are not equal.\n",int1,int2); 
+		}
+		Console.Read();
+	}
+}
+
+
+2) 
+public class TestData
+{
+ 	public static void Main()
+	{
+ 		int no; 
+ 		Console.Write("Input no: "); 
+		no= Convert.ToInt32(Console.ReadLine()); 
+ 		if (no>=0) 
+		{
+			Console.WriteLine("{0} positive no.\n",no); 
+		}
+		else
+		{
+ 			Console.WriteLine("{0}  not positive.\n",no); 
+		}
+		Console.Read();
+	}
+}
+
+
+3) 
+class Program
+{       
+	static void Main(string[] args) 
+	{              
+  		int a, b, c; 
+		Console.Write("Input 1st number: "); 
+		a= Convert.ToInt32(Console.ReadLine()); Console.Write("Input 2nd number: ");
+ 		b= Convert.ToInt32(Console.ReadLine());
+
+		c = a + b;
+ 		Console.WriteLine("Addition: {0}", c);
+		c = a - b;      
+ 		Console.WriteLine("Substriction: {0}", c); 
+		c = a * b;        
+  		Console.WriteLine("Multiplicationn: {0}", c);
+		c = a / b;        
+  		Console.WriteLine("Division: {0}", c); 
+		Console.ReadLine();   
+    	} 
+} 
+
+
+4) (A) (i)
+class Avg 
+{ 
+	public static void Main() 
+	{
+ 		int[] arr = { 1, 2, 6, 2, 18 };
+ 		int i=0;
+ 		int sum = 0; 
+		float average = 0.0F; 
+		for (i = 0; i < arr.Length; i++)
+ 		{ 
+			sum += arr[i];
+ 		} 
+		average = (float)sum / arr.Length; Console.WriteLine("Average of Array elements: "+ average);
+ 	}
+}
+
+4) (A) (ii) 
+public class minmax
+{    
+	public static void Main() 
+	{     
+  		int[] arr = new int[5] {99, 95, 93, 89, 87};    
+   		int i, max, min, n;
+   		n = 5;
+    		max = arr[0];
+    		min = arr[0];
+      		for(i=1; i<n; i++) 
+		{
+     			if(arr[i]>max) 
+   			{
+        			max = arr[i];
+   			}
+			if(arr[i]<min)
+ 			{            
+ 				min = arr[i];
+			}
+		}
+		Console.Write("Maximum element = {0}", max);
+		Console.Write("Minimum element = {0}", min);
+	}
+}
+
+4) (B)
+class Marks
+{
+   	static void Main(string[] args)
+        {
+        	int[] arr = new int[10];
+            	Console.WriteLine("Enter Marks: ");
+            	for (int i = 0; i < 10; i++)
+            	{
+                	arr[i] = Convert.ToInt32(Console.ReadLine());
+            	}
+            	Console.WriteLine("Total Marks: " + arr.Sum());
+            	Console.WriteLine("Average Marks: " + arr.Average());
+            	Console.WriteLine("Minimum Marks: " + arr.Min());
+            	Console.WriteLine("Maximum Marks: " + arr.Max());
+            	Array.Sort(arr);
+            	Console.WriteLine("Marks in Ascending Order: ");
+            	foreach(int i in arr)
+            	{
+                	Console.WriteLine(i + " ");
+            	}
+            	Array.Reverse(arr);
+            	Console.WriteLine("Marks in Descending Order: ");
+            	foreach (int i in arr)
+            	{
+                	Console.WriteLine(i + " ");
+            	}
+            	Console.Read();
+      	}
+}
