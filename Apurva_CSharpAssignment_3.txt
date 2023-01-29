@@ -1,0 +1,172 @@
+1)
+using System;
+ 
+class Program {
+ 
+    
+    public static void Main()
+    {
+ 
+       
+        string str1 = "firstname";
+        string str2 = "lastname";
+ 
+       
+        string upperstr1 = str1.ToUpper();
+        Console.WriteLine(upperstr1);
+        string upperstr2 = str2.ToUpper();
+        Console.WriteLine(upperstr2);
+ 
+        
+    }
+}
+
+2)
+using System;
+
+
+public class A
+{
+      
+    public static int count(string s, char c)
+    {
+        int res = 0;
+ 
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (s[i] == c)
+            res++;
+        }
+         
+        return res;
+    }
+     
+   
+    public static void Main()
+    {
+        string str = "OOPS PROGRAMMING IN C SHARP";
+        char c = 'S';
+          
+         
+        Console.WriteLine(count(str, c));
+        Console.Read();
+    }
+}
+
+3)
+class SaleDetails
+    {
+        public int SalesNo, ProductNo, Qty;
+        public double Price, TotalAmount;
+        public DateTime DateofSale;
+
+        public SaleDetails(int SalesNo,int ProductNo,int Qty,double Price,DateTime DateofSale)
+        {
+            this.SalesNo = SalesNo;
+            this.ProductNo = ProductNo;
+            this.Qty = Qty;
+            this.Price = Price;
+            this.DateofSale = DateofSale;
+        }
+
+        public void Sales(int qty, float price)
+        {
+            TotalAmount = qty * price;
+        }
+
+        public void ShowData()
+        {
+            Console.WriteLine("Sales Number: {0}",SalesNo);
+            Console.WriteLine("Product Number: {0}",ProductNo);
+            Console.WriteLine("Price: {0}",Price);
+            Console.WriteLine("Quantity: {0}",Qty);
+            Console.WriteLine("Date of Sale: {0}",DateofSale);
+            Console.WriteLine("Total Amount: {0}",TotalAmount);
+        }
+
+	public static void Main()
+        {
+            SaleDetails sale = new SaleDetails(11, 5, 2, 115.85d, DateTime.Now);
+            sale.Sales(sale.Qty, sale.Price);
+            sale.ShowData();
+            Console.Read();
+        }
+    }
+
+4)
+class Scholarship
+    {
+        public int TotalMarks;
+        public float fees;
+
+        public float Merit(int marks, float fee)
+        {
+            if(marks >= 70 && marks <= 80)
+            {
+                return fee * 0.2f;
+            }
+            else if(marks > 80 && marks <= 90)
+            {
+                return fee * 0.3f;
+            }
+            else if (marks > 90)
+            {
+                return fee * 0.5f;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
+
+        public static void Main()
+        {
+            Scholarship sch = new Scholarship();
+            Console.WriteLine("total marks: ");
+            sch.TotalMarks = int.Parse(Console.ReadLine());
+            Console.WriteLine("fees: ");
+            sch.fees = float.Parse(Console.ReadLine());
+            Console.WriteLine("Scholarship: " + sch.Merit(sch.TotalMarks, sch.fees));
+            Console.Read();
+        }
+    }
+
+5)
+using System;
+
+
+class Doctor
+{
+    private int RegNo; 
+    private string Name;
+    private int Feescharged;
+    {
+        get  {return Name;}
+        set  {Name = value;}
+        
+        get   {return RegNo;}
+        set   {RegNo = value;}
+        
+        get  {return Feescharged;}
+        set  {Feescharged = value;}
+        
+    }
+}
+ 
+ 
+ class Program
+{
+  static void Main(string[] args)
+  {
+    Doctor doc = new Doctor();
+    doc.Name = "apurva";
+    Console.WriteLine(doc.Name);
+    doc.RegNo = "10";
+    Console.WriteLine(doc.RegNo);
+    doc.Feescharged = "500";
+    Console.WriteLine(doc.Feescharged);
+    
+    console.Read();
+
+  }
+}
