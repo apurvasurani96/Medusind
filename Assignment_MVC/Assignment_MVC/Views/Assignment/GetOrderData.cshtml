@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "GetOrderData";
+}
+
+<h2>GetOrderData</h2>
+
+@foreach (var v in Model)
+{
+    <li>Order ID : @v.OrderID</li>
+    <li>Customer ID : @v.CustomerID</li>
+}
