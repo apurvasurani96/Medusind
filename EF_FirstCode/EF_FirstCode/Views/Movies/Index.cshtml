@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EF_FirstCode.Models.Movies>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mnae)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateofRelease)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mnae)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateofRelease)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Mid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Mid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Mid })
+        </td>
+    </tr>
+}
+
+</table>
