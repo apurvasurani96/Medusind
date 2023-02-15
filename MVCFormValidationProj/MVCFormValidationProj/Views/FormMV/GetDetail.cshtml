@@ -1,0 +1,54 @@
+﻿@model MVCFormValidationProj.Models.MVCFormValidation
+@{
+    ViewBag.Title = "GetDetail";
+}
+
+<h2>GetDetail</h2>
+
+@using (Html.BeginForm())
+            {
+                <table>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Name)</td>
+                        <td>@Html.TextBoxFor(m => m.Name)</td>
+                        <td>@Html.ValidationMessageFor(m => m.Name)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.FamilyName)</td>
+                        <td>@Html.TextBoxFor(m => m.FamilyName)</td>
+                        <td>@Html.ValidationMessageFor(m => m.FamilyName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Email)</td>
+                        <td>@Html.TextBoxFor(m => m.Email)</td>
+                        <td>@Html.ValidationMessageFor(m => m.Email)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Phone)</td>
+                        <td>@Html.TextBoxFor(m => m.Phone)</td>
+                        <td>@Html.ValidationMessageFor(m => m.Phone)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Zipcode)</td>
+                        <td>@Html.TextBoxFor(m => m.Zipcode)</td>
+                        <td>@Html.ValidationMessageFor(m => m.Zipcode)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Age)</td>
+                        <td>@Html.TextBoxFor(m => m.Age)</td>
+                        <td>@Html.ValidationMessageFor(m => m.Age)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Gender)</td>
+                        Male :
+                        <td>@Html.RadioButtonFor(m => m.Gender, "M")</td>
+                        <td>@Html.ValidationMessageFor(m => m.Gender)</td>
+                        <br />
+                        Female :
+                        <td>@Html.RadioButtonFor(m => m.Gender, "F")</td>
+                        <td>@Html.ValidationMessageFor(m => m.Gender)</td>
+                    </tr>
+                    <tr><td><button type="submit"</td>Submit</tr>
+                </table>
+            } 
+
